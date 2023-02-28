@@ -1,0 +1,213 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$RLP3UMZz5hgIlf2BMn10VY$8lYw0rfI5adXvqKQjlZBxJQ8qvACqKxF2Kx9Pk3EIXU=",
+            "last_login": "2023-02-28T00:59:01.230Z",
+            "is_superuser": true,
+            "username": "admin@user.com",
+            "first_name": "",
+            "last_name": "",
+            "email": "admin@user.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2023-02-28T00:58:45.651Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "app.player",
+        "pk": 1,
+        "fields": {
+            "name": "Roberto Baggio",
+            "initial_price": 12.0
+        }
+    },
+    {
+        "model": "app.player",
+        "pk": 2,
+        "fields": {
+            "name": "Aloisio Chupa-piroca",
+            "initial_price": 5.0
+        }
+    },
+    {
+        "model": "app.player",
+        "pk": 3,
+        "fields": {
+            "name": "Capitão",
+            "initial_price": 4.0
+        }
+    },
+    {
+        "model": "app.player",
+        "pk": 4,
+        "fields": {
+            "name": "Cristiano Ronaldo",
+            "initial_price": 120.0
+        }
+    },
+    {
+        "model": "app.team",
+        "pk": 1,
+        "fields": {
+            "name": "Brasil"
+        }
+    },
+    {
+        "model": "app.team",
+        "pk": 2,
+        "fields": {
+            "name": "Italia"
+        }
+    },
+    {
+        "model": "app.team",
+        "pk": 3,
+        "fields": {
+            "name": "Alemanha"
+        }
+    },
+    {
+        "model": "app.team",
+        "pk": 4,
+        "fields": {
+            "name": "Republica Tcheca"
+        }
+    },
+    {
+        "model": "app.myteam",
+        "pk": 1,
+        "fields": {
+            "name": "Time do Trabalho",
+            "players": [
+                1,
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "app.match",
+        "pk": 1,
+        "fields": {
+            "match_date": "2023-02-28T01:07:02Z",
+            "team_a": 1,
+            "team_b": 2,
+            "team_a_goal": 0,
+            "team_b_goal": 0
+        }
+    },
+    {
+        "model": "app.match",
+        "pk": 2,
+        "fields": {
+            "match_date": "2023-02-28T02:22:54Z",
+            "team_a": 1,
+            "team_b": 3,
+            "team_a_goal": 1,
+            "team_b_goal": 1
+        }
+    },
+    {
+        "model": "app.action",
+        "pk": 1,
+        "fields": {
+            "player": 1,
+            "team": 2,
+            "minute": 78,
+            "match": 1,
+            "action": "yellow_card"
+        }
+    },
+    {
+        "model": "app.action",
+        "pk": 2,
+        "fields": {
+            "player": 2,
+            "team": 1,
+            "minute": 80,
+            "match": 1,
+            "action": "goal"
+        }
+    },
+    {
+        "model": "app.action",
+        "pk": 3,
+        "fields": {
+            "player": 1,
+            "team": 2,
+            "minute": 811,
+            "match": 1,
+            "action": "goal"
+        }
+    },
+    {
+        "model": "app.action",
+        "pk": 4,
+        "fields": {
+            "player": 2,
+            "team": 1,
+            "minute": 84,
+            "match": 1,
+            "action": "RED_card"
+        }
+    },
+    {
+        "model": "app.action",
+        "pk": 5,
+        "fields": {
+            "player": 2,
+            "team": 1,
+            "minute": 4,
+            "match": 2,
+            "action": "yellow_card"
+        }
+    },
+    {
+        "model": "app.action",
+        "pk": 6,
+        "fields": {
+            "player": 3,
+            "team": 1,
+            "minute": 6,
+            "match": 2,
+            "action": "goal"
+        }
+    },
+    {
+        "model": "app.action",
+        "pk": 7,
+        "fields": {
+            "player": 3,
+            "team": 1,
+            "minute": 13,
+            "match": 2,
+            "action": "RED_card"
+        }
+    },
+    {
+        "model": "app.action",
+        "pk": 8,
+        "fields": {
+            "player": 1,
+            "team": 3,
+            "minute": 15,
+            "match": 2,
+            "action": "goal"
+        }
+    },
+    {
+        "model": "app.action",
+        "pk": 9,
+        "fields": {
+            "player": 4,
+            "team": 1,
+            "minute": 20,
+            "match": 2,
+            "action": "yellow_card"
+        }
+    }
+]
