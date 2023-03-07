@@ -10,7 +10,7 @@ import (
 	"github.com/AllanCordeiro/cartolinha/ms-consolidador/internal/domain/repository"
 	"github.com/AllanCordeiro/cartolinha/ms-consolidador/internal/infra/db"
 	"github.com/AllanCordeiro/cartolinha/ms-consolidador/internal/infra/presenter"
-	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/v5"
 )
 
 func ListPlayersHandler(ctx context.Context, queries db.Queries) http.HandlerFunc {

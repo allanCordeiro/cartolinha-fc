@@ -21,7 +21,7 @@ type AddMyTeamUseCase struct {
 func (a *AddMyTeamUseCase) Execute(ctx context.Context, input AddMyTeamInput) error {
 	myTeamRepository := a.getMyTeamRepository(ctx)
 	myTeam := entity.NewMyTeam(input.ID, input.Name)
-	_, err := myTeamRepository.Create(ctx, myTeam)
+	err := myTeamRepository.Create(ctx, myTeam)
 	if err != nil {
 		return err
 	}

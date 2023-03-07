@@ -1,5 +1,5 @@
 export type Player = {
-    id: number;
+    id: string;
     name: string;
     price: number;
 }
@@ -7,7 +7,7 @@ export type Player = {
 export type Action = {    
     player_name: string;
     minutes: number;
-    action: "goal" | "yellow_card" | "fault" | "red_card" | "assist";
+    action: "goal" | "yellow card" | "fault" | "red card" | "assist";
     score: number;
 }
 
@@ -23,9 +23,14 @@ export type Match = {
 
 export const PlayersMap: {[key: string]: string} = {
     "Cristiano Ronaldo": "/img/players/Cristiano Ronaldo.png",
+    "De Bruyne": "/img/players/De Bruyne.png",
+    "Harry Kane": "/img/players/Harry Kane.png",
+    "Lewandowski": "/img/players/Lewandowski.png",
+    "Maguirre": "/img/players/Maguirre.png",
     "Messi": "/img/players/Messi.png",
     "Neymar": "/img/players/Neymar.png",
-    "Flavio Caca-Rato": "/img/players/Maguirre.png"
+    "Richarlison": "/img/players/Richarlison.png",
+    "Vinicius Junior": "/img/players/Vinicius Junior.png",
 }
 
 export const TeamsImagesMap: { [key: string]: string } = {

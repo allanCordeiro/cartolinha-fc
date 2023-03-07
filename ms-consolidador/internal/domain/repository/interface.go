@@ -10,7 +10,7 @@ type MyTeamRepositoryInterface interface {
 	FindByID(ctx context.Context, id string) (*entity.MyTeam, error)
 	FindByIDForUpdate(ctx context.Context, id string) (*entity.MyTeam, error)
 	AddScore(ctx context.Context, team *entity.MyTeam, score float64) error
-	Create(ctx context.Context, team *entity.MyTeam) ([]entity.Player, error)
+	Create(ctx context.Context, team *entity.MyTeam) error
 	FindAllPlayers(ctx context.Context, teamID string) ([]entity.Player, error)
 	SavePlayers(ctx context.Context, myTeam *entity.MyTeam) error
 }
