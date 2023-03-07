@@ -9,6 +9,8 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { useRouter } from 'next/router'
 import { Match } from '../../util/model'
 import { green } from '@mui/material/colors'
+import { useHttp } from '../../hooks/useHttp'
+import { fetcherStats } from '../../util/http'
 
 
 function formatAction(playerName: string, action: string) {
@@ -17,9 +19,9 @@ function formatAction(playerName: string, action: string) {
       return `${playerName} fez um gol`;
     case "assist":
       return `${playerName} deu uma assistência`;
-    case "yellow_card":
+    case "yellow card":
       return `${playerName} levou um cartão amarelo`;
-    case "red_card":
+    case "red card":
       return `${playerName} levou um cartão vermelho`;
     default:
       return `${playerName} fez alguma coisa`;
@@ -62,33 +64,14 @@ const HeadImage = (props: HeadImageProps) => (
   <Image src={props.src} alt={props.alt} width={32} height={32} />
 );
 
-const match: Match = {
-  id: "1",
-  team_a: "Brasil",
-  team_b: "Argentina",
-  match_date: "12/12/2022 00:00",
-  result: "1-0",
-  actions: [
-    {      
-      player_name: "Neymar",
-      action: "goal",
-      minutes: 66,
-      score: 5,
-    },
-    {      
-      player_name: "Messi",
-      action: "yellow_card",
-      minutes: 70,
-      score: -2,
-    },
-  ]
-}
 
-const ShowMatchPage: NextPage = () => {
+const ShowMatchPage: NextPage = () => {  
   const router = useRouter();
+  const {id: matchId } = router.query;
+  const {data: match } = useHttp<Match>(matchId ? `/matches/${matchId}` : null, fetcherStats, {refreshInterval: 5000});
   return (
     <Page>
-      <Box sx={{display: 'flex', alignItems:'center', flexDirection: 'column', gap: (theme) => theme.spacing(3)}}>
+      {match && (<Box sx={{display: 'flex', alignItems:'center', flexDirection: 'column', gap: (theme) => theme.spacing(3)}}>
         <MatchResult match={match}/>
         <Section
             sx={{
@@ -172,7 +155,7 @@ const ShowMatchPage: NextPage = () => {
           >
             Voltar
           </Button>
-      </Box>
+      </Box>)}
     </Page>
   )
 }
