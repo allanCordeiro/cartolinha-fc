@@ -10,6 +10,7 @@ dj-database-url = "*"
 djangorestframework = "3.14.0"
 django-cors-headers = "3.13.0"
 confluent-kafka = "1.9.2"
+app = "*"
 
 [dev-packages]
 
